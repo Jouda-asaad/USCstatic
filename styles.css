@@ -25,7 +25,7 @@
 
 /* --- BASE STYLES & VARIABLES --- */
 :root {
-    --bg-dark: #0a192f;
+    --bg-dark: #020c1b;
     --bg-light: #112240;
     --text-light: #ccd6f6;
     --text-dark: #8892b0;
@@ -40,7 +40,7 @@
     --text-secondary: var(--text-dark);
     --heading-color: var(--white);
     --card-bg: var(--bg-light);
-    --header-bg: rgba(10, 25, 47, 0.85);
+    --header-bg: rgba(2, 12, 27, 0.85);
 }
 
 .light-theme {
@@ -93,17 +93,31 @@ a:hover {
     color: var(--heading-color);
 }
 
-h1, h2, h3, h4 {
+h1,
+h2,
+h3,
+h4 {
     color: var(--heading-color);
     font-weight: 700;
     line-height: 1.2;
     margin-bottom: 1rem;
 }
 
-h1 { font-size: clamp(2.5rem, 5vw, 4rem); }
-h2 { font-size: clamp(1.8rem, 4vw, 2.5rem); }
-h3 { font-size: clamp(1.2rem, 3vw, 1.5rem); }
-h4 { font-size: clamp(1rem, 2.5vw, 1.2rem); }
+h1 {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+}
+
+h2 {
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+}
+
+h3 {
+    font-size: clamp(1.2rem, 3vw, 1.5rem);
+}
+
+h4 {
+    font-size: clamp(1rem, 2.5vw, 1.2rem);
+}
 
 
 .container {
@@ -204,9 +218,31 @@ h2.section-subtitle {
 }
 
 .logo {
-    font-size: 1.2rem;
-    font-weight: 700;
-    color: var(--heading-color);
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    max-height: 60px;
+    width: auto;
+}
+
+/* Default (Dark Mode) */
+.logo-light {
+    display: none;
+}
+
+.logo-dark {
+    display: block;
+}
+
+/* Light Mode */
+.light-theme .logo-light {
+    display: block;
+}
+
+.light-theme .logo-dark {
+    display: none;
 }
 
 .nav-links {
@@ -224,6 +260,12 @@ h2.section-subtitle {
 .nav-links a:hover {
     color: var(--accent-cyan);
     border-bottom-color: var(--accent-cyan);
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
 }
 
 .hamburger {
@@ -248,7 +290,6 @@ h2.section-subtitle {
     border: none;
     cursor: pointer;
     padding: 5px;
-    margin-left: 1rem;
 }
 
 .theme-toggle svg {
@@ -260,10 +301,21 @@ h2.section-subtitle {
     stroke: var(--white);
 }
 
-.light-theme .theme-toggle .icon-sun { display: none; }
-.light-theme .theme-toggle .icon-moon { display: block; }
-.theme-toggle .icon-sun { display: block; }
-.theme-toggle .icon-moon { display: none; }
+.light-theme .theme-toggle .icon-sun {
+    display: none;
+}
+
+.light-theme .theme-toggle .icon-moon {
+    display: block;
+}
+
+.theme-toggle .icon-sun {
+    display: block;
+}
+
+.theme-toggle .icon-moon {
+    display: none;
+}
 
 
 /* --- HERO SECTION --- */
@@ -271,7 +323,8 @@ h2.section-subtitle {
     min-height: 100vh;
     display: flex;
     align-items: center;
-    padding-top: 80px; /* Header height */
+    padding-top: 80px;
+    /* Header height */
 }
 
 .hero-content {
@@ -306,7 +359,10 @@ h2.section-subtitle {
 }
 
 /* --- ABOUT SECTION --- */
-#about h2 { text-align: center; margin-bottom: 3rem; }
+#about h2 {
+    text-align: center;
+    margin-bottom: 3rem;
+}
 
 .about-content {
     display: grid;
@@ -338,17 +394,24 @@ h2.section-subtitle {
 }
 
 /* --- PLATFORMS SECTION --- */
-#platforms h2, #team h2, #roadmap h2, #ecosystem h2, #contact h2 {
+#platforms h2,
+#team h2,
+#roadmap h2,
+#ecosystem h2,
+#contact h2 {
     text-align: center;
 }
 
-.platform-cards, .team-cards {
+.platform-cards,
+.team-cards {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
 }
 
-.card, .team-card, .timeline-content {
+.card,
+.team-card,
+.timeline-content {
     background-color: var(--card-bg);
     padding: 2rem;
     border-radius: 4px;
@@ -358,7 +421,9 @@ h2.section-subtitle {
     flex-direction: column;
 }
 
-.card:hover, .team-card:hover, .timeline-item:hover .timeline-content {
+.card:hover,
+.team-card:hover,
+.timeline-item:hover .timeline-content {
     transform: translateY(-10px);
     box-shadow: 0 20px 30px -15px var(--shadow);
 }
@@ -376,10 +441,25 @@ h2.section-subtitle {
     margin-bottom: 1.5rem;
 }
 
-.card h3 { color: var(--heading-color); }
-.card p { color: var(--text-secondary); margin-bottom: 1rem; flex-grow: 1; }
-.card ul { list-style: none; margin-bottom: 1.5rem; }
-.card li { font-size: 0.9rem; color: var(--text-secondary); }
+.card h3 {
+    color: var(--heading-color);
+}
+
+.card p {
+    color: var(--text-secondary);
+    margin-bottom: 1rem;
+    flex-grow: 1;
+}
+
+.card ul {
+    list-style: none;
+    margin-bottom: 1.5rem;
+}
+
+.card li {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+}
 
 /* --- ECOSYSTEM SECTION --- */
 .ecosystem-columns {
@@ -454,9 +534,26 @@ h2.section-subtitle {
     margin-bottom: 1.5rem;
 }
 
-.team-card h4 { font-size: 1.2rem; margin-bottom: 0.5rem; }
-.team-card .team-role { color: var(--accent-cyan); font-size: 0.9rem; margin-bottom: 1rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; }
-.team-card .team-detail { color: var(--text-secondary); font-size: 0.85rem; margin-bottom: 0.25rem; line-height: 1.4; }
+.team-card h4 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.team-card .team-role {
+    color: var(--accent-cyan);
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.team-card .team-detail {
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+    margin-bottom: 0.25rem;
+    line-height: 1.4;
+}
 
 /* --- CONTACT SECTION --- */
 .contact-wrapper {
@@ -472,6 +569,7 @@ h2.section-subtitle {
     margin-bottom: 1rem;
     color: var(--text-secondary);
 }
+
 .contact-info strong {
     color: var(--text-primary);
 }
@@ -528,6 +626,7 @@ h2.section-subtitle {
     margin: 0 0.5rem;
     color: var(--text-secondary);
 }
+
 .footer-links a:hover {
     color: var(--accent-cyan);
 }
@@ -538,19 +637,25 @@ h2.section-subtitle {
         grid-template-columns: 1fr;
         text-align: center;
     }
+
     .hero-text p {
         margin-left: auto;
         margin-right: auto;
     }
+
     .hero-buttons {
         justify-content: center;
     }
+
     .drone-silhouette {
         margin: 2rem auto 0;
         width: 80%;
         max-width: 300px;
     }
-    .about-content, .ecosystem-columns, .contact-wrapper {
+
+    .about-content,
+    .ecosystem-columns,
+    .contact-wrapper {
         grid-template-columns: 1fr;
     }
 }
@@ -582,9 +687,11 @@ h2.section-subtitle {
     .hamburger.active .hamburger-bar:nth-child(2) {
         opacity: 0;
     }
+
     .hamburger.active .hamburger-bar:nth-child(1) {
         transform: translateY(8px) rotate(45deg);
     }
+
     .hamburger.active .hamburger-bar:nth-child(3) {
         transform: translateY(-8px) rotate(-45deg);
     }
@@ -596,9 +703,11 @@ h2.section-subtitle {
     .roadmap-timeline::after {
         left: 15px;
     }
+
     .timeline-item {
         padding-left: 50px;
     }
+
     .timeline-item::before {
         left: 6px;
     }
