@@ -454,9 +454,9 @@ h2.section-subtitle {
     margin-bottom: 1.5rem;
 }
 
-.team-card h4 { font-size: 1.2rem; }
-.team-card p { color: var(--accent-cyan); font-size: 0.9rem; margin-bottom: 0.5rem; }
-.team-card span { color: var(--text-secondary); font-size: 0.9rem; }
+.team-card h4 { font-size: 1.2rem; margin-bottom: 0.5rem; }
+.team-card .team-role { color: var(--accent-cyan); font-size: 0.9rem; margin-bottom: 1rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; }
+.team-card .team-detail { color: var(--text-secondary); font-size: 0.85rem; margin-bottom: 0.25rem; line-height: 1.4; }
 
 /* --- CONTACT SECTION --- */
 .contact-wrapper {
