@@ -51,6 +51,8 @@ document.addEventListener('DOMContentLoaded', () => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
             const targetId = this.getAttribute('href');
+            if (targetId === '#') return;
+
             const targetElement = document.querySelector(targetId);
             if (targetElement) {
                 targetElement.scrollIntoView({
@@ -72,7 +74,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             });
         }, {
-            threshold: 0.1 
+            threshold: 0.1
         });
 
         fadeInElements.forEach(el => {
@@ -100,7 +102,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 alert('Please fill out all required fields.');
                 return;
             }
-            
+
             // On successful "submission"
             thankYouMessage.style.display = 'block';
             contactForm.reset();
