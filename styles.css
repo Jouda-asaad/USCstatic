@@ -122,6 +122,18 @@ h2.section-subtitle {
     margin: -1rem 0 2rem 0;
 }
 
+
+/* --- THREE.JS BACKGROUND --- */
+#canvas-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+}
+
 /* --- UTILITY & ANIMATIONS --- */
 .btn {
     display: inline-block;
